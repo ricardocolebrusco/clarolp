@@ -1,0 +1,1788 @@
+@charset "UTF-8";
+* {
+  font-size: inherit;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+
+html, body {
+  min-height: 100vh;
+  font-size: 100%;
+  background-color: #000000;
+  font-family: "AMX", sans-serif;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+ol, ul, li {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  list-style: none;
+}
+
+.js-scroll {
+  opacity: 0;
+  transition: all .5s;
+  -ms-transform: translate3d(-3rem, 0, 0);
+  -webkit-transform: translate3d(-3rem, 0, 0);
+  transform: translate3d(-3rem, 0, 0);
+}
+
+.js-scroll.scroll-top {
+  -ms-transform: translate3d(0, 2rem, 0);
+  -webkit-transform: translate3d(0, 2rem, 0);
+  transform: translate3d(0, 2rem, 0);
+}
+
+.js-scroll.scroll-right {
+  -ms-transform: translate3d(3rem, 0, 0);
+  -webkit-transform: translate3d(3rem, 0, 0);
+  transform: translate3d(3rem, 0, 0);
+}
+
+.js-scroll.ativo {
+  opacity: 1;
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.fadeAnimation {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #FF3B30 !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: .7rem !important;
+  height: .7rem !important;
+  background: #FFFFFF !important;
+  transition: .3s all;
+}
+
+.owl-theme .owl-dots .owl-dot span:hover {
+  background: #FF3B30 !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #FFFFFF !important;
+  width: 5rem !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #6c202a;
+  background-position: center 250px;
+  background-size: auto calc(2.5 * 100vh);
+  font-family: "AMX", sans-serif;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "AMX", sans-serif;
+}
+
+body .fixed-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9997;
+  transition: all .3s;
+}
+
+body .fixed-whatsapp.consentbar {
+  bottom: 10rem;
+}
+
+body .fixed-whatsapp:hover {
+  filter: brightness(1.15);
+}
+
+body .fixed-whatsapp img {
+  width: 100%;
+  max-width: 17.5rem;
+}
+
+header {
+  background: #281218;
+  background: linear-gradient(180deg, #281218, #6c202b);
+  transition: .3s all;
+}
+
+header.header-sticky {
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+}
+
+header figure {
+  max-width: 23rem;
+  width: 100%;
+  transition: opacity .5s ease-in-out;
+  margin: 0;
+}
+
+header figure img {
+  width: 100%;
+}
+
+header .btn-whatsapp {
+  background-color: #FFFFFF;
+  color: #691f2a;
+  border-radius: 500px;
+  border: 0 none;
+  padding: 1rem 2.4rem .8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+header .btn-whatsapp span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+header .btn-whatsapp:hover, header .btn-whatsapp:active, header .btn-whatsapp:focus {
+  background-color: #FFFFFF !important;
+  color: #691f2a !important;
+}
+
+header .btn-header {
+  color: #83170F;
+  background-color: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: 500px;
+  border: 0 none;
+  padding: 1rem 3.4rem .8rem;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s all;
+}
+
+header .btn-header:hover, header .btn-header:active, header .btn-header:focus {
+  color: #000000 !important;
+  background-color: #fbba4c !important;
+}
+
+.banner-content {
+  background: linear-gradient(0deg, #491821 0%, #6c202a 100%);
+  overflow-x: hidden;
+  min-height: calc(100vh - 10rem);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-content .banner-slideshow {
+  position: absolute;
+  top: 0;
+}
+
+.banner-content .banner-slideshow .item {
+  margin-left: 1px;
+}
+
+.banner-content .banner-slideshow .item img {
+  min-height: 76rem;
+  max-height: calc(100vh - 10rem);
+  width: 100%;
+  object-fit: contain;
+  object-position: top right;
+}
+
+.banner-content .banner-img-content {
+  pointer-events: none;
+}
+
+.banner-content .banner-img-content .disabled {
+  display: none;
+}
+
+.banner-content .banner-img-content .owl-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content .banner-img-content .figure-banner-mobile, .banner-content .banner-img-content .figure-banner-desktop {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content .banner-img-content .figure-banner-mobile img, .banner-content .banner-img-content .figure-banner-desktop img {
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+}
+
+.banner-content .banner-img-content .figure-banner-mobile {
+  margin-bottom: -2rem;
+}
+
+.banner-content .banner-img-content .figure-banner-desktop img {
+  min-height: 50rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.banner-content h1 {
+  position: relative;
+  z-index: 3;
+  font-size: 38px;
+  line-height: 40px;
+}
+
+.banner-content p {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.banner-content p strong {
+  font-weight: 700;
+}
+
+.banner-content .btn-channels {
+  max-width: 100%;
+}
+
+.banner-content .btn-channels img {
+  width: 100%;
+}
+
+.banner-content subc {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.banner-content .price-box-claro {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  color: #FFFFFF;
+}
+
+.banner-content .price-box-claro::before, .banner-content .price-box-claro::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+}
+
+.banner-content .price-box-claro::before {
+  inset: 0;
+  z-index: -1;
+  margin: 1.25px 1.5px 1.5px;
+  border-radius: 19px;
+  background: linear-gradient(45deg, #631b21, #721d28);
+}
+
+.banner-content .price-box-claro::after {
+  inset: 0;
+  z-index: -2;
+  border-radius: 20px;
+  background: #eb95a3;
+  background: linear-gradient(305deg, #eb95a3 0%, #c74047 34%, #fec2c4 61%, #d3272d 95%);
+}
+
+.banner-content .price-claro {
+  position: relative;
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.banner-content .price-claro h2 {
+  margin: 1rem 0 0 0;
+}
+
+.banner-content .price-claro h2.plan-value {
+  font-size: 40px;
+  font-weight: 500;
+  min-height: 6rem;
+  display: flex;
+  gap: 0 .5rem;
+}
+
+.banner-content .price-claro h2.plan-value span {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.banner-content .price-claro h2.plan-value strong {
+  margin-top: -.5rem;
+  font-size: 117px;
+  line-height: 108px;
+}
+
+.banner-content .price-claro .font-sublime {
+  max-width: 15rem;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin-right: 1rem;
+  position: relative;
+  bottom: 1.2rem;
+}
+
+.banner-content .price-claro .font-sublime span {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.banner-content .price-claro span.value-plan-month {
+  font-weight: 0;
+  text-align: left;
+  font-size: 12.5px;
+  line-height: 28px;
+  position: relative;
+  bottom: 2.5rem;
+  right: 0;
+  line-height: 1;
+  margin-left: 0;
+  width: 1vw;
+  left: -5rem;
+  white-space: nowrap;
+}
+
+.banner-content .btn {
+  text-transform: inherit;
+  display: block;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  border: 0 none;
+  font-size: 20px;
+  padding: .6rem 2.4rem;
+  border-radius: 500px;
+  font-weight: 600;
+}
+
+.banner-content .btn-signature {
+  color: #000000;
+  background-color: #fbba4c;
+}
+
+.banner-content .btn-signature:hover {
+  color: #FFFFFF;
+  background-color: #FF3B30;
+}
+
+.banner-content .btn-app {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+}
+
+.banner-content .btn-app:hover {
+  border: 1px solid #FF3B30;
+  background-color: #FF3B30;
+}
+
+.banner-content sub {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.buyflow {
+  overflow: hidden;
+  position: relative;
+  color: #FFFFFF;
+  background: #43151e;
+  background: linear-gradient(0deg, #631b28 0%, #501923 100%);
+}
+
+.buyflow h4 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.buyflow h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 3rem;
+}
+
+.buyflow p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.buyflow p strong {
+  font-weight: 700;
+}
+
+.buyflow .owl-carousel {
+  cursor: grab;
+}
+
+.buyflow .owl-carousel:active {
+  cursor: grabbing;
+}
+
+.buyflow .owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+
+.buyflow .owl-carousel .item {
+  position: relative;
+}
+
+.buyflow .owl-carousel .item .content {
+  text-align: left;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  right: 35px;
+}
+
+.buyflow .owl-carousel .item .content h4 {
+  justify-content: start;
+  min-height: 62px;
+  font-size: 28px;
+  line-height: 25px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.buyflow .owl-carousel .item .content h4 > img {
+  width: auto;
+  height: 4rem;
+}
+
+.buyflow .owl-carousel .item .content p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.buyflow .owl-carousel .item .content p strong {
+  font-weight: 700;
+}
+
+.buyflow .owl-carousel .item figure img {
+  max-width: 42rem;
+  border-radius: 20px;
+}
+
+.sound-box-app-container {
+  background: linear-gradient(0deg, #631b28 0%, #491821 100%);
+}
+
+.box-options .box-content {
+  position: relative;
+  color: #FFFFFF;
+}
+
+.box-options .box-content .box-claro-txt {
+  z-index: 9;
+  padding: 180px 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: url(../assets/images/bg/bg-claro-box.png) #2f090d no-repeat left bottom;
+  background-size: 420px;
+}
+
+.box-options .box-content .box-claro-txt h2 {
+  max-width: 34rem;
+  font-size: 40px;
+  margin-bottom: 4rem;
+}
+
+.box-options .box-content .box-claro-txt p {
+  max-width: 34rem;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.box-options .box-content .box-claro-txt p strong {
+  font-weight: 500;
+}
+
+.box-options .box-carrossel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.box-options .box-carrossel .box-claro-carrossel {
+  padding: 50px 0 50px 30px;
+  height: 100%;
+  background-color: #2f090d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .owl-carousel .owl-stage {
+  display: inline-flex;
+  justify-content: stretch;
+  align-items: stretch;
+  background-color: #500709;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .owl-carousel .owl-loading {
+  opacity: 1;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item {
+  width: 45rem;
+  height: 100%;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content {
+  background-color: #500709;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .device-carrossel {
+  height: 22rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .logo-carrossel {
+  height: 3rem;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .logo-carrossel-app {
+  height: 4rem;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel {
+  padding-top: 3rem;
+  padding-inline: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: .75rem;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel p {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel p strong {
+  font-weight: 500;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel .signatures-carrossel {
+  margin-top: .5rem;
+  height: 5rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box, .box-options .box-carrossel .box-claro-carrossel .box-item.second-box {
+  z-index: 3;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box::before, .box-options .box-carrossel .box-claro-carrossel .box-item.first-box::after, .box-options .box-carrossel .box-claro-carrossel .box-item.second-box::before, .box-options .box-carrossel .box-claro-carrossel .box-item.second-box::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box::after, .box-options .box-carrossel .box-claro-carrossel .box-item.second-box::after {
+  background: #d3272d;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box::after {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box .box-content {
+  margin: 1.5px 0.75px 1.5px 1.5px;
+  padding: 4rem 3.5rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.first-box .content-carrossel {
+  padding-inline: 0;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.second-box::after {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: linear-gradient(325deg, #d3272d 0%, #c74047 34%, #fec2c4 81%, #d3272d 100%);
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.second-box .box-content {
+  height: 100%;
+  margin: 1.5px 1.5px 1.5px 0.75px;
+  padding: 4rem 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.box-options .box-carrossel .box-claro-carrossel .box-item.second-box .content-carrossel {
+  padding-inline: 3.5rem;
+}
+
+.cardlist-content {
+  position: relative;
+  color: #FFFFFF;
+  background: #491821;
+  background: linear-gradient(180deg, #491821 0%, #631b28 100%);
+}
+
+.cardlist-content h4.title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: .15rem;
+}
+
+.cardlist-content figure {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.cardlist-content figure img {
+  max-width: 100%;
+}
+
+.bf-channels {
+  background: #43151e;
+  background: linear-gradient(0deg, #43151e 0%, #631b28 100%);
+}
+
+.bf-channels .buyflow-channels {
+  position: relative;
+  z-index: 8;
+  color: #FFFFFF;
+  background-color: #2f090d;
+  border-radius: 20px;
+}
+
+.bf-channels .buyflow-channels .channels-flow {
+  position: relative;
+  z-index: 9;
+  padding: 24px 32px;
+  background-color: #200000;
+  border-radius: 20px;
+  box-shadow: 0 1.3rem 5.7rem 0 rgba(0, 0, 0, 0.45);
+}
+
+.bf-channels .buyflow-channels .channels-flow h4 {
+  padding-right: 5%;
+  font-size: 40px;
+}
+
+.bf-channels .buyflow-channels .channels-flow p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.bf-channels .buyflow-channels .channels-flow .channels-list {
+  cursor: grab;
+}
+
+.bf-channels .buyflow-channels .channels-flow .channels-list:active {
+  cursor: grabbing;
+}
+
+.bf-channels .buyflow-channels .channels-flow .channels-list figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+  margin: 0;
+  position: relative;
+  padding: 16px 24px;
+}
+
+.bf-channels .buyflow-channels .channels-flow .channels-list figure::after {
+  position: absolute;
+  left: .5rem;
+  right: .5rem;
+  top: .5rem;
+  bottom: .5rem;
+  content: '';
+  border-radius: 8px;
+  background-color: #130000;
+}
+
+.bf-channels .buyflow-channels .channels-flow .channels-list figure img {
+  z-index: 1;
+  position: relative;
+  width: calc( 100% - 1rem);
+  height: calc( 100% - 1rem);
+  object-fit: contain;
+  object-position: center;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature {
+  padding: 48px 32px;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .glob-sign {
+  z-index: 3;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .glob-sign .buyflow-logo-globoplay {
+  order: 4;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .glob-sign .buyflow-logo-netflix {
+  order: 2;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .glob-sign .buyflow-logo-max {
+  order: 1;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .glob-sign .buyflow-logo-appletv {
+  order: 3;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature .button-plus {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #FFFFFF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../assets/images/bg/plus-icon.svg);
+  background-size: cover;
+  background-color: #2f090d;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(-50%, -50%);
+}
+
+.bf-channels .buyflow-channels .globoplay-signature figure {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  border: 1px solid #FFFFFF;
+  border-radius: calc($border-radius-lg * 1.5);
+  padding: 5rem;
+  margin: 0;
+}
+
+.bf-channels .buyflow-channels .globoplay-signature figure img {
+  width: 100%;
+  height: auto;
+  max-width: 13.5rem;
+  border-radius: 8px;
+}
+
+.price-plan {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: #43151e;
+  background: linear-gradient(180deg, #43151e 0%, #281117 100%);
+}
+
+.price-plan .box-netflix p {
+  font-size: 20px;
+  line-height: 28px;
+  color: #1D1D1D;
+  margin: 0;
+}
+
+.price-plan .box-netflix .radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner label {
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: .75rem;
+  align-items: center;
+  text-wrap: nowrap;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner label img {
+  max-width: 100%;
+  width: 7.5rem;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner label span {
+  font-size: 24px;
+  line-height: 36px;
+  color: #FF3B30;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner input,
+.price-plan .box-netflix .radio-wrapper .radio-inner input:focus,
+.price-plan .box-netflix .radio-wrapper .radio-inner input:hover {
+  all: unset;
+  position: absolute;
+  inset: 0;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner .radio-image {
+  border: 1px solid #151515;
+  background-color: #FFFFFF;
+  margin-right: 2rem;
+  box-shadow: inset 0 0 0 3px white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transition: all .3s;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner:hover .radio-image, .price-plan .box-netflix .radio-wrapper .radio-inner:focus-within .radio-image {
+  background-color: #DA291C;
+}
+
+.price-plan .box-netflix .radio-wrapper .radio-inner:has(:checked) .radio-image {
+  background-color: #DA291C;
+}
+
+.price-plan .economy-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 7rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 2.5rem;
+  border-radius: 8px 8px 0 0;
+  color: #FFFFFF;
+  background-color: #c4311c;
+  z-index: -1;
+}
+
+.price-plan .economy-box::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.price-plan .economy-box p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.price-plan .product-plan {
+  z-index: 2;
+  position: relative;
+  border-radius: 20px;
+  color: #1D1D1D;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.price-plan .product-plan figure {
+  margin-bottom: 1.5rem;
+}
+
+.price-plan .product-plan figure.app-claro {
+  width: 100%;
+}
+
+.price-plan .product-plan figure.app-claro img {
+  display: block;
+  margin-inline: auto;
+  height: 5rem;
+  max-width: 100%;
+  width: auto;
+}
+
+.price-plan .product-plan figure.sign-globo {
+  width: 100%;
+}
+
+.price-plan .product-plan figure.sign-globo img {
+  display: block;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+}
+
+.price-plan .product-plan .discount-plan {
+  background-color: #3c1c23;
+  padding-block: 1rem;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.price-plan .product-plan .discount-plan p {
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.price-plan .product-plan .value-plan {
+  padding-top: 1.5rem;
+  padding-bottom: 0rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  max-width: fit-content;
+  align-items: baseline;
+}
+
+.price-plan .product-plan .value-plan > p {
+  font-size: 14px;
+  line-height: 12px;
+  font-weight: 500;
+}
+
+.price-plan .product-plan .value-plan > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.price-plan .product-plan .value-plan > div span.value-plan-month {
+  text-align: left;
+  font-size: 14px;
+  line-height: 12px;
+  position: absolute;
+  bottom: .5rem;
+  right: 0;
+}
+
+.price-plan .product-plan .value-plan > div span.value-plan-month.negative-month {
+  margin-right: -2.875rem;
+}
+
+.price-plan .product-plan .value-plan > div span.value-plan-month strong {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 9.5px;
+  font-weight: 500;
+  margin-left: 18rem;
+  text-align: right;
+  width: 60px;
+  position: relative;
+  padding-left: 2px;
+}
+
+.price-plan .product-plan .value-plan > div h5 {
+  font-size: 40px;
+  font-weight: 500;
+  min-height: 6rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 0;
+  gap: 0 5px;
+}
+
+.price-plan .product-plan .value-plan > div h5 strong {
+  font-size: 104px;
+  line-height: 96px;
+  margin-bottom: .5rem;
+}
+
+.price-plan .product-plan .btn {
+  border: 1px solid;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 500px;
+}
+
+.price-plan .product-plan .btn.btn-plan {
+  text-wrap: nowrap;
+  font-size: 20px;
+  padding: .8rem 2.4rem;
+}
+
+.price-plan .product-plan .btn.btn-primary {
+  font-weight: 600;
+  color: #000000;
+  background-color: #fbba4c;
+  border-color: #fbba4c;
+}
+
+.price-plan .product-plan .btn.btn-primary:hover {
+  color: #FFFFFF;
+  border-color: #FF3B30;
+  background-color: #FF3B30;
+}
+
+.price-plan .product-plan .btn.btn-secondary {
+  font-weight: 500;
+  border-color: #1D1D1D;
+  color: #1D1D1D;
+  background-color: #FFFFFF;
+}
+
+.price-plan .product-plan .btn.btn-secondary:hover {
+  color: #FFFFFF;
+  border-color: #FF3B30;
+  background-color: #FF3B30;
+}
+
+.price-plan .product-plan #app-clarotvpromocional .accordion-item, .price-plan .product-plan #app-clarotv .accordion-item, .price-plan .product-plan #app-clarotvfull .accordion-item,
+.price-plan .product-plan #app-netflix-promotional .accordion-item, .price-plan .product-plan #app-netflix .accordion-item, .price-plan .product-plan #app-netflix-full .accordion-item {
+  border: 0 none;
+}
+
+.price-plan .product-plan #app-clarotvpromocional .accordion-item p, .price-plan .product-plan #app-clarotv .accordion-item p, .price-plan .product-plan #app-clarotvfull .accordion-item p,
+.price-plan .product-plan #app-netflix-promotional .accordion-item p, .price-plan .product-plan #app-netflix .accordion-item p, .price-plan .product-plan #app-netflix-full .accordion-item p {
+  color: #1D1D1D;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.price-plan .product-plan #app-clarotvpromocional .accordion-button, .price-plan .product-plan #app-clarotv .accordion-button, .price-plan .product-plan #app-clarotvfull .accordion-button,
+.price-plan .product-plan #app-netflix-promotional .accordion-button, .price-plan .product-plan #app-netflix .accordion-button, .price-plan .product-plan #app-netflix-full .accordion-button {
+  font-weight: 400;
+  text-wrap: nowrap;
+  text-transform: inherit;
+  color: #1D1D1D;
+  font-size: 18px;
+  padding: 8px 24px;
+  outline: none;
+  border: 0 none;
+  gap: 5px;
+}
+
+.price-plan .product-plan #app-clarotvpromocional .accordion-button:not(.collapsed), .price-plan .product-plan #app-clarotvpromocional .accordion-button:focus, .price-plan .product-plan #app-clarotvpromocional .accordion-button:hover, .price-plan .product-plan #app-clarotv .accordion-button:not(.collapsed), .price-plan .product-plan #app-clarotv .accordion-button:focus, .price-plan .product-plan #app-clarotv .accordion-button:hover, .price-plan .product-plan #app-clarotvfull .accordion-button:not(.collapsed), .price-plan .product-plan #app-clarotvfull .accordion-button:focus, .price-plan .product-plan #app-clarotvfull .accordion-button:hover,
+.price-plan .product-plan #app-netflix-promotional .accordion-button:not(.collapsed),
+.price-plan .product-plan #app-netflix-promotional .accordion-button:focus,
+.price-plan .product-plan #app-netflix-promotional .accordion-button:hover, .price-plan .product-plan #app-netflix .accordion-button:not(.collapsed), .price-plan .product-plan #app-netflix .accordion-button:focus, .price-plan .product-plan #app-netflix .accordion-button:hover, .price-plan .product-plan #app-netflix-full .accordion-button:not(.collapsed), .price-plan .product-plan #app-netflix-full .accordion-button:focus, .price-plan .product-plan #app-netflix-full .accordion-button:hover {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.price-plan .product-plan #app-clarotvpromocional .accordion-button::after, .price-plan .product-plan #app-clarotv .accordion-button::after, .price-plan .product-plan #app-clarotvfull .accordion-button::after,
+.price-plan .product-plan #app-netflix-promotional .accordion-button::after, .price-plan .product-plan #app-netflix .accordion-button::after, .price-plan .product-plan #app-netflix-full .accordion-button::after {
+  width: 1.3rem;
+  height: 1.3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231D1D1D'%3e%3cpath fill-rule='evenodd' d='M.74,1.41c.32-.33.85-.33,1.18,0,0,0,0,0,0,0l6.08,8.41L14.08,1.41c.33-.33.85-.33,1.18,0s.33.85,0,1.18l-6.67,9c-.32.33-.85.33-1.18,0,0,0,0,0,0,0L.74,2.59c-.33-.32-.33-.85,0-1.18,0,0,0,0,0,0Z'/%3e%3c/svg%3e");
+  margin: 0;
+}
+
+.price-plan .info-label {
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.faq-session {
+  background: #281117;
+}
+
+.faq-session .title h5 {
+  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.faq-session .faq-questions .accordion-button {
+  text-transform: inherit;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 24px 32px;
+  outline: none;
+  border: 0 none;
+  border-bottom: 1px solid #83170F;
+  gap: 2rem;
+}
+
+.faq-session .faq-questions .accordion-button strong {
+  color: #FF3B30;
+  font-weight: 700;
+}
+
+.faq-session .faq-questions .accordion-button:not(.collapsed), .faq-session .faq-questions .accordion-button:focus, .faq-session .faq-questions .accordion-button:hover {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.faq-session .faq-questions .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF3B30'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.faq-session .faq-questions .accordion-body {
+  padding: 24px 32px;
+}
+
+.faq-session .faq-questions .accordion-body ul {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.faq-session .faq-questions .accordion-body ul li {
+  list-style-type: disc;
+  margin-bottom: .5rem;
+}
+
+.faq-session .faq-questions .accordion-body ul li::marker {
+  color: #DA291C;
+}
+
+.faq-session .faq-questions .accordion-body p, .faq-session .faq-questions .accordion-body li {
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+.faq-session .faq-questions .accordion-body p a, .faq-session .faq-questions .accordion-body li a {
+  color: #FF3B30;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.faq-session .faq-questions .accordion-body p a:hover, .faq-session .faq-questions .accordion-body li a:hover {
+  color: #DA291C;
+}
+
+.faq-session .faq-questions .accordion-body p:last-child, .faq-session .faq-questions .accordion-body li:last-child {
+  margin-bottom: 0;
+}
+
+.faq-session .faq-questions .accordion-body p strong, .faq-session .faq-questions .accordion-body li strong {
+  font-weight: 700;
+}
+
+.legal-term {
+  position: relative;
+  background: #281117;
+  border-bottom: 1px solid #cd262d;
+}
+
+.legal-term::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #d26868;
+}
+
+.legal-term p, .legal-term a {
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.legal-term p a, .legal-term a a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #281117;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+footer .copyright-text p {
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 0;
+}
+
+footer .copyright-text nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .copyright-text nav ul a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #919191;
+  font-size: 12px;
+  font-weight: 600;
+  transition: .3s all;
+}
+
+footer .copyright-text nav ul:hover {
+  color: #FFFFFF;
+}
+
+footer figure {
+  max-width: 12rem;
+}
+
+footer figure img {
+  width: 100%;
+}
+
+span.value-plan-month2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
+}
+
+span.value-plan-month2.negative-month {
+  margin-right: -4rem;
+}
+
+span.value-plan-month2 strong {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: right;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    -ms-transform: translate3d(-1rem, -2.5rem, 0);
+    -webkit-transform: translate3d(-1rem, -2.5rem, 0);
+    transform: translate3d(-1rem, -2.5rem, 0);
+  }
+  20%, 80% {
+    -ms-transform: translate3d(2rem, -2.5rem, 0);
+    -webkit-transform: translate3d(2rem, -2.5rem, 0);
+    transform: translate3d(2rem, -2.5rem, 0);
+  }
+  30%, 50%, 70% {
+    -ms-transform: translate3d(-2rem, -2.5rem, 0);
+    -webkit-transform: translate3d(-2rem, -2.5rem, 0);
+    transform: translate3d(-2rem, -2.5rem, 0);
+  }
+  40%, 60% {
+    -ms-transform: translate3d(2.5rem, -2.5rem, 0);
+    -webkit-transform: translate3d(2.5rem, -2.5rem, 0);
+    transform: translate3d(2.5rem, -2.5rem, 0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+/** Adaptações **/
+@media screen and (max-width: 1200px) {
+  .banner-content {
+    background-image: none;
+    background: linear-gradient(0deg, #491821 0%, #6c202a 100%);
+  }
+  .banner-content .banner-slideshow {
+    position: relative;
+  }
+  .banner-content .banner-slideshow .item {
+    margin-left: 0;
+  }
+  .banner-content .banner-slideshow .item img {
+    min-height: auto;
+    max-height: 70rem;
+    object-fit: cover;
+    object-position: bottom center;
+  }
+  .box-options .box-content .box-claro-txt {
+    padding-inline: 3rem;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature .button-plus {
+    left: 50%;
+    top: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure {
+    width: 100%;
+    padding: 3rem 2rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 20px;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign .buyflow-logo-globoplay {
+    order: 1;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign .buyflow-logo-netflix {
+    order: 2;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign .buyflow-logo-max {
+    order: 3;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign .buyflow-logo-appletv {
+    order: 4;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign img {
+    border-radius: 0;
+  }
+  .bf-channels .buyflow-channels .channels-flow {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-position: center 150px;
+  }
+  .buyflow {
+    overflow: hidden;
+  }
+  .buyflow h4 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    display: inline-block;
+  }
+  .buyflow h4 img {
+    max-width: 20rem;
+    margin-bottom: 15px;
+    margin-inline: 5px;
+  }
+  .buyflow p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .cardlist-content h4.title {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+  .price-plan .box-netflix .accordion-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .price-plan .box-netflix .accordion-body .radio-wrapper {
+    width: fit-content;
+  }
+  .price-plan .box-netflix .accordion-body .radio-wrapper .radio-inner {
+    padding: 0;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner {
+    padding: 0 1rem;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner label {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner label img {
+    width: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .price-plan .box-netflix .accordion-body .radio-wrapper {
+    margin-left: -1rem;
+  }
+  .price-plan .box-netflix .accordion-body .radio-wrapper .radio-inner {
+    padding: 0;
+  }
+  .price-plan .product-plan .btn.btn-primary, .price-plan .product-plan .btn.btn-secondary {
+    width: 100%;
+    font-size: 18px;
+  }
+  .price-plan .product-plan .discount-plan {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  .box-options .box-carrossel .box-claro-carrossel {
+    padding: 50px 0;
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item {
+    width: 40rem;
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item .box-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .bf-channels .buyflow-channels .channels-flow .channels-list figure {
+    padding: 4px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .btn-whatsapp {
+    width: 42px;
+    padding: 1rem;
+  }
+  header .btn-whatsapp span {
+    display: none;
+  }
+  header .btn-whatsapp, header .btn-header {
+    height: 42px;
+  }
+  .banner-content {
+    text-align: center;
+  }
+  .banner-content .banner-slideshow .item img {
+    max-height: 55rem;
+  }
+  .price-plan {
+    padding-top: 2rem;
+  }
+  .price-plan .box-netflix .accordion-body .radio-wrapper {
+    margin-left: 0;
+  }
+  .price-plan .owl-carousel .owl-stage-outer {
+    padding-top: 3rem;
+  }
+  .price-plan .owl-carousel .owl-stage {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item {
+    position: relative;
+    transition: transform 0.3s, z-index 0.3s;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item.active {
+    opacity: 1;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item.center {
+    z-index: 10;
+    transform: none;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item .product-plan {
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item .product-plan .btn.btn-primary, .price-plan .owl-carousel .owl-stage .owl-item .product-plan .btn.btn-secondary {
+    width: 100%;
+    font-size: 20px;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-clarotv .accordion-item, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-clarotvgloboplay .accordion-item, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix .accordion-item, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix-promotional .accordion-item, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix-full .accordion-item {
+    margin-inline: -1.5rem;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-clarotv .accordion-button, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-clarotvgloboplay .accordion-button, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix .accordion-button, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix-promotional .accordion-button, .price-plan .owl-carousel .owl-stage .owl-item .product-plan #app-netflix-full .accordion-button {
+    font-size: 16px;
+    padding: 8px 0 0;
+  }
+  .box-options .box-carrossel {
+    position: relative;
+    background: url(../assets/images/bg/bg-claro-box.png) #2f090d no-repeat left bottom;
+    background-size: calc(100% - 35vw);
+  }
+  .box-options .box-carrossel .box-claro-carrossel {
+    background-color: transparent;
+  }
+  .box-options .box-content {
+    max-width: 100% !important;
+  }
+  .box-options .box-content .box-claro-txt {
+    padding: 50px 50px 0;
+    background-image: none;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+  }
+  .box-options .box-content .box-claro-txt h2, .box-options .box-content .box-claro-txt p {
+    max-width: inherit;
+  }
+  .box-options .box-content .box-claro-txt h2 {
+    font-size: 32px;
+  }
+  .box-options .box-content .box-claro-txt p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .buyflow .owl-carousel .owl-stage-outer {
+    overflow: visible;
+  }
+  .buyflow .owl-carousel .item figure img {
+    width: 100%;
+    max-width: 40rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .cardlist-content h4.title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .price-plan .product-plan .discount-plan p {
+    font-size: 16px;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner label {
+    font-size: 16px;
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header figure {
+    max-width: 16rem;
+  }
+  header .btn-header {
+    font-weight: 500;
+    font-size: 14px;
+    padding: .8rem 2.4rem;
+  }
+  .banner-content {
+    min-height: calc(100vh - 6rem);
+    text-align: center;
+    color: #FFFFFF;
+    justify-content: space-between !important;
+  }
+  .banner-content .app-claro, .banner-content .price-claro {
+    justify-content: center;
+  }
+  .banner-content .app-claro span.value-plan-month.negative-month, .banner-content .price-claro span.value-plan-month.negative-month {
+    font-size: 14px;
+  }
+  .banner-content h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .banner-content p {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0;
+  }
+  .banner-content .btn-channels img {
+    max-width: 100%;
+    width: 100%;
+  }
+  .buyflow h4 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 2rem;
+  }
+  .buyflow p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .buyflow .owl-carousel .item figure {
+    max-width: calc(100vw - 10%);
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item {
+    max-width: 36.5rem;
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item.first-box .box-content {
+    padding: 4rem 3rem;
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .box-options .box-carrossel .box-claro-carrossel .box-item .box-content .content-carrossel p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .price-box-claro .price-claro h2 {
+    margin: 0;
+  }
+  .price-box-claro .price-claro h2.plan-value {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .price-box-claro .price-claro h2.plan-value strong {
+    font-size: calc($font-size-ul * 1.75);
+    line-height: calc($font-line-height-xl * 1.75);
+  }
+  .price-box-claro .price-claro .font-sublime {
+    max-width: 10rem;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .bf-channels .buyflow-channels .channels-flow {
+    text-align: center;
+    padding: 8px 24px 16px 24px;
+    border-radius: 20px;
+  }
+  .bf-channels .buyflow-channels .channels-flow h4 {
+    font-size: 24px;
+    padding-right: 0;
+  }
+  .bf-channels .buyflow-channels .channels-flow p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .bf-channels .buyflow-channels .channels-flow .channels-list figure {
+    padding: 8px 16px;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature {
+    padding: 3.2rem 1.6rem;
+    border-radius: 0 0 20px 20px;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature .button-plus {
+    left: 50%;
+    top: 0;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure {
+    padding: 2.1rem 2rem 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .bf-channels .buyflow-channels .globoplay-signature figure .glob-sign img {
+    border-radius: 0;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner {
+    padding: 0;
+  }
+  .price-plan .box-netflix .radio-wrapper .radio-inner .radio-image {
+    margin-right: 1rem;
+  }
+  .price-plan .product-plan .value-plan h5 {
+    font-size: 40px;
+    gap: 0;
+  }
+  .price-plan .product-plan .value-plan h5 strong {
+    font-size: calc($font-size-ul * 1.6);
+    line-height: calc($font-line-height-xl * 1.6);
+  }
+  .price-plan .owl-carousel .owl-stage {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item {
+    position: relative;
+    transition: transform 0.3s, z-index 0.3s;
+  }
+  .price-plan .owl-carousel .owl-stage .owl-item .product-plan {
+    min-width: 100%;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.85);
+    border-radius: 20px;
+  }
+  .faq-session .title h5 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .faq-session .title h5 strong {
+    display: block;
+  }
+  .faq-session .faq-questions .accordion-button {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 24px;
+  }
+  .faq-session .faq-questions .accordion-body p, .faq-session .faq-questions .accordion-body li, .faq-session .faq-questions .accordion-body a {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  footer .copyright-text nav ul {
+    flex-direction: column;
+    gap: .5rem;
+  }
+}

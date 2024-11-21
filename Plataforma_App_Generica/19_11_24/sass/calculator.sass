@@ -1,0 +1,282 @@
+@import 'token'
+
+.calculator-session
+  position: relative
+  z-index: 1
+  background: #43171f
+  padding: 10rem 5rem 6rem
+  box-shadow: 0 1.3rem 5.7rem 0 rgba(0,0,0,.45)
+  border-radius: 0 0 2rem 2rem
+  margin-top: -5rem
+  h4
+    font-size: $font-size-xxl
+    line-height: $font-line-height-lg
+    color: $color-neutral-lightest
+    img
+      height: auto
+      width: 22rem
+  h5
+    font-size: $font-size-xl
+    line-height: $font-line-height-md
+    font-weight: $font-weight-regular
+    color: $color-neutral-lightest
+    strong
+      font-weight: $font-weight-medium
+
+  form
+    max-width: 60rem
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .products-division
+      max-width: 60rem
+      width: 100%
+      display: flex
+      flex-direction: column
+      label
+        width: 100%
+        height: 9rem
+        border-radius: $border-radius-lg
+        overflow: hidden
+        display: flex
+        flex-direction: row
+        border: 1px solid #633e45
+        background: #3a131a
+        .custom-input
+          display: flex
+          align-items: center
+          justify-content: center
+          border-radius: $border-radius-lg
+          width: 9rem
+          height: 100%
+          background: #331016
+          img
+            width: 3.5rem
+        .content-input
+          flex: 1
+          padding: 1rem 2rem
+          display: flex
+          flex-direction: row
+          align-items: center
+          justify-content: space-between
+          .channels-signature
+            font-weight: $font-weight-bold
+            font-size: calc($font-size-xl * .9)
+            line-height: calc($font-line-height-xs * 1.2)
+            color: $color-neutral-lightest
+          .ic-netflix
+            height: 35px
+          .ic-max
+            height: 30px
+          .ic-globoplay
+            height: 38px
+          .ic-apple
+            height: 42px
+          .price-input
+            position: relative
+            font-size: $font-size-lg
+            color: $color-neutral-lightest
+            font-weight: $font-weight-medium
+            > sup
+              font-size: $font-size-xxs
+              position: absolute
+
+    .products-compare-result
+      max-width: 60rem
+      width: 100%
+      > sup
+        display: block
+        width: 90%
+        margin-inline: auto
+        text-align: center
+        font-size: $font-size-xxs
+        line-height: $font-line-height-xxxs
+        color: $color-neutral-lightest
+      .without-app-claro
+        border: 1px solid $color-neutral-lightest
+        height: 6.5rem
+        border-radius: $border-radius-lg
+        display: flex
+        align-items: center
+        .price, .data-price
+          color: $color-neutral-lightest
+          font-size: $font-size-xxl
+          font-weight: $font-weight-medium
+        .price
+          font-size: $font-size-xl
+          display: flex
+          align-items: center
+          justify-content: center
+          padding: 1rem 2rem
+          border-radius: $border-radius-lg 0 0 $border-radius-lg
+          height: 100%
+          background: #5a333a
+      .with-app-claro
+        border-radius: $border-radius-lg
+        border: 1px solid $color-brand-primary-bright
+        background: #50151b
+        height: 9rem
+        display: flex
+        align-items: center
+        figure
+          margin: .5rem 0 0 0
+          color: $color-neutral-lightest
+          font-size: $font-size-xxl
+          font-weight: $font-weight-medium
+          img
+            height: 4.5rem
+            margin-bottom: 1rem
+        .data-price
+          color: $color-neutral-lightest
+          font-size: $font-size-xxl
+          font-weight: $font-weight-medium
+
+      .economy-title
+        p
+          color: $color-neutral-lightest
+          font-size: $font-size-xl
+          line-height: $font-line-height-md
+          font-weight: $font-weight-medium
+
+      .price-box-claro
+        width: 100%
+        max-width: 40rem
+        margin-inline: auto
+        position: relative
+        z-index: 2
+        border-radius: $border-radius-lg
+        padding: 2.5rem 3rem
+        $border: 5px
+        color: $color-neutral-lightest
+        &::before, &::after
+          pointer-events: none
+          content: ''
+          position: absolute
+        &::before
+          inset: 0
+          z-index: -1
+          margin: 1.25px 1.5px 1.5px
+          border-radius: 19px
+          background: linear-gradient(45deg, rgba(99, 27, 33, 1.0), rgba(114, 29, 40, 1.0))
+        &::after
+          inset: 0
+          z-index: -2
+          border-radius: 20px
+          background: rgb(235,149,163)
+          background: linear-gradient(305deg, rgba(235,149,163,1) 0%, rgba(199,64,71,1) 34%, rgba(254,194,196,1) 61%, rgba(211,39,45,1) 95%)
+
+        .price-claro
+          position: relative
+          max-width: fit-content
+          margin-inline: auto
+          img
+            max-width: 100%
+            width: 85%
+
+@media screen and (max-width: $screen-size-md)
+  .calculator-session
+    h4
+      font-size: $font-size-xl
+      line-height: $font-line-height-md
+      img
+        width: 18rem
+    h5
+      font-size: $font-size-md
+      line-height: $font-line-height-xs
+
+    form
+      .products-division
+        label
+          height: 7rem
+          .custom-input
+            width: 7rem
+            img
+              width: 3rem
+          .content-input
+            .channels-signature
+              font-size: $font-size-md
+              line-height: $font-line-height-xs
+            .ic-netflix
+              height: 23px
+            .ic-max
+              height: 20px
+            .ic-globoplay
+              height: 28px
+            .ic-apple
+              height: 28px
+
+      .products-compare-result
+        .without-app-claro, .with-app-claro
+          .data-price
+            font-size: $font-size-xl
+          .price, figure
+            font-size: $font-size-lg
+            img
+              height: 3rem
+              margin-bottom: .75rem
+
+@media screen and (max-width: $screen-size-xxs)
+  .calculator-session
+    padding: 8rem 2.5rem 2rem
+    h4
+      font-size: $font-size-lg
+      line-height: $font-line-height-sm
+      img
+        width: 12.5rem
+    h5
+      font-size: $font-size-sm
+      strong
+        display: block
+    form
+      .products-division
+        label
+          height: 5.5rem
+          border-radius: $border-radius-md
+          .custom-input
+            width: 5.5rem
+            border-radius: $border-radius-md
+            img
+              width: 2.5rem
+          .content-input
+            .price-input
+              font-size: $font-size-sm
+              sup
+                font-size: $font-size-xxxs
+            .channels-signature
+              font-size: $font-size-xs
+              line-height: $font-line-height-xxxs
+            .ic-netflix
+              height: 20px
+            .ic-max
+              height: 17px
+            .ic-globoplay
+              height: 23px
+            .ic-apple
+              height: 23px
+
+      .products-compare-result
+        .without-app-claro
+          height: 5rem
+          border-radius: $border-radius-md
+        .with-app-claro
+          height: 7rem
+          border-radius: $border-radius-md
+        .with-app-claro, .without-app-claro
+          .price
+            font-size: $font-size-sm
+            border-radius: $border-radius-md 0 0 $border-radius-md
+            padding: 1rem 1.5rem
+          .data-price
+            font-size: $font-size-lg
+          figure
+            transform: scale(.85)
+        .price-box-claro
+          transform: scale(.8)
+
+        .economy-title
+          p
+            font-size: $font-size-md
+            line-height: $font-line-height-xs
+            margin-bottom: 0

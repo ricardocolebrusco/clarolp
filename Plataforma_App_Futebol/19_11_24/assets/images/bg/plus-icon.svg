@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Imagem" data-name="+ Imagem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.98 31.91">
+  <defs>
+    <style>
+.cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M14.37,14.78v-4.96h2.66v4.92h4.96v2.38h-4.87v4.98c-.92.04-1.66.07-2.65.12v-5.01h-5.04c-.04-.84-.07-1.51-.11-2.43h5.05Z"/>
+</svg>

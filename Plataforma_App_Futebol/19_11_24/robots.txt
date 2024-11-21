@@ -1,0 +1,2 @@
+User-agent: *
+Allow: /campanhas/assine-globoplay/

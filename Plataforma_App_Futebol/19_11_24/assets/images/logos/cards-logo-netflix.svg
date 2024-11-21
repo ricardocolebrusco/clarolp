@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Gradiente_sem_nome);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #e4131a;
+      }
+
+      .cls-3 {
+        fill: url(#Gradiente_sem_nome_2);
+      }
+
+      .cls-4 {
+        fill: #000;
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome" data-name="Gradiente sem nome" x1="210.7" y1="857.7" x2="239.4" y2="846" gradientTransform="translate(-96 -708.2)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b11917"/>
+      <stop offset=".6" stop-color="#7b1714"/>
+      <stop offset="1" stop-color="#e4131a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_2" data-name="Gradiente sem nome 2" x1="279.4" y1="860.5" x2="250.1" y2="872.9" gradientTransform="translate(-96 -708.2)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b11917"/>
+      <stop offset=".6" stop-color="#7b1714"/>
+      <stop offset="1" stop-color="#b11917" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-4" y="-.3" width="300" height="300" rx="20.9" ry="20.9"/>
+  <path class="cls-1" d="M93.6,51.6l.7,200.5c14.6-2.8,26.2-2.5,39.1-3.7V51.8s-39.8-.2-39.8-.2Z"/>
+  <path class="cls-3" d="M164.5,51.8h39.8l.5,199.9-40.5-6.7.2-193.2h0Z"/>
+  <path class="cls-2" d="M94.1,51.8c.9,2.3,69.1,196.2,69.1,196.2,11.2,0,26.2,1.7,41,3.4L133.2,51.8h-39.1Z"/>
+</svg>

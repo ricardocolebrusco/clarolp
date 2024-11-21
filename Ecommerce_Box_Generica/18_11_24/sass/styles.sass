@@ -1,0 +1,1282 @@
+@import 'token'
+@import 'mixin'
+@import 'reset'
+
+.js-scroll
+  opacity: $opacity-transparent
+  transition: all .5s
+  @include transform(translate3d(-3rem, 0, 0))
+  &.scroll-top
+    @include transform(translate3d(0, 2rem, 0))
+  &.scroll-right
+    @include transform(translate3d(3rem, 0, 0))
+.js-scroll.ativo
+  opacity: $opacity-opaque
+  @include transform(translate3d(0, 0, 0))
+
+.fadeAnimation
+  animation-name: fade
+  animation-duration: 1s
+
+.owl-theme
+  .owl-dots
+    .owl-dot
+      &:hover
+        span
+          background: $color-brand-primary-bright !important
+      span
+        width: .7rem !important
+        height: .7rem !important
+        background: $color-neutral-lightest !important
+        transition: .3s all
+        &:hover
+          background: $color-brand-primary-bright !important
+      &.active
+        span
+          background: $color-neutral-lightest !important
+          width: 5rem !important
+
+body
+  background: #6c202a
+  background-position: center 250px
+  background-size: auto calc(2.5 * 100vh)
+  font-family: $font-family-amx
+  h1, h2, h3, h4, h5, h6
+    font-family: $font-family-amx
+
+  .fixed-whatsapp
+    position: fixed
+    bottom: 2rem
+    right: 2rem
+    z-index: 9997
+    transition: all .3s
+    &.consentbar
+      bottom: 10rem
+    &:hover
+      filter: brightness(1.15)
+    img
+      width: 100%
+      max-width: 17.5rem
+
+header
+  background: rgba(40, 18, 24, 1.0)
+  background: linear-gradient(180deg, rgba(40, 18, 24, 1.0), rgba(108, 32, 43, 1.0))
+  transition: .3s all
+  &.header-sticky
+    box-shadow: 0 .5rem .5rem 0 rgba($color-neutral-deep, $opacity-light)
+  figure
+    max-width: 23rem
+    width: 100%
+    transition: opacity .5s ease-in-out
+    margin: 0
+    img
+      width: 100%
+  .btn-whatsapp
+    background-color: $color-neutral-lightest
+    color: #691f2a
+    border-radius: $border-radius-pill
+    border: 0 none
+    padding: 1rem 2.4rem .8rem
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 1rem
+    span
+      font-size: $font-size-xs
+      font-weight: $font-weight-semi-bold
+    &:hover, &:active, &:focus
+      background-color: $color-neutral-lightest !important
+      color: #691f2a !important
+
+  .btn-header
+    color: $color-neutral-deep
+    background-color: #fbba4c
+    border-radius: $border-radius-pill
+    border: 0 none
+    padding: 1rem 3.4rem .8rem
+    vertical-align: middle
+    font-size: $font-size-xs
+    font-weight: $font-weight-semi-bold
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: .3s all
+    &:hover, &:active, &:focus
+      color: $color-neutral-lightest !important
+      background-color: $color-brand-primary-bright !important
+
+.banner-content
+  background: linear-gradient(0deg, rgba(73,24,33,1) 0%, rgba(108,32,42,1) 100%)
+  overflow-x: hidden
+  min-height: calc(100vh - 15rem)
+  color: $color-neutral-lightest
+  display: flex
+  flex-direction: column
+  .banner-slideshow
+    position: absolute
+    top: 0
+    .item
+      margin-left: 1px
+      img
+        min-height: 75rem
+        max-height: calc(100vh - 15rem)
+        width: 100%
+        object-fit: contain
+        object-position: top right
+  .banner-img-content
+    pointer-events: none
+    .disabled
+      display: none
+    .owl-item
+      display: flex
+      align-items: center
+      justify-content: center
+    .figure-banner-mobile, .figure-banner-desktop
+      margin: 0
+      position: relative
+      z-index: 2
+      img
+        max-width: 100%
+        max-height: calc(100vh - 8rem)
+    .figure-banner-mobile
+      margin-bottom: -2rem
+    .figure-banner-desktop
+      img
+        min-height: 50rem
+        object-fit: contain
+        object-position: center
+  h1
+    position: relative
+    z-index: 3
+    font-size: calc($font-size-xxl * .95)
+    line-height: $font-line-height-lg
+    font-weight: $font-weight-bold
+  p
+    font-size: $font-size-lg
+    line-height: $font-line-height-sm
+    strong
+      font-weight: $font-weight-bold
+  .btn-channels
+    max-width: 100%
+    img
+      width: 100%
+
+  .price-box-claro
+    position: relative
+    z-index: 2
+    border-radius: $border-radius-lg
+    padding: 2rem 3rem
+    $border: 5px
+    color: $color-neutral-lightest
+    &::before, &::after
+      pointer-events: none
+      content: ''
+      position: absolute
+    &::before
+      inset: 0
+      z-index: -1
+      margin: 1.25px 1.5px 1.5px
+      border-radius: 19px
+      background: linear-gradient(45deg, rgba(99, 27, 33, 1.0), rgba(114, 29, 40, 1.0))
+    &::after
+      inset: 0
+      z-index: -2
+      border-radius: 20px
+      background: rgb(235,149,163)
+      background: linear-gradient(305deg, rgba(235,149,163,1) 0%, rgba(199,64,71,1) 34%, rgba(254,194,196,1) 81%, rgba(211,39,45,1) 100%)
+  .price-claro
+    h2
+      margin: 0
+      &.plan-value
+        font-size: $font-size-xxl
+        font-weight: $font-weight-medium
+        min-height: 6rem
+        display: flex
+        gap: 0 .5rem
+        span
+          align-self: flex-end
+          margin-bottom: 1rem
+        strong
+          font-size: calc($font-size-ul * 2.25)
+          line-height: calc($font-line-height-xl * 2.25)
+    .font-sublime
+      max-width: 15rem
+      font-weight: $font-weight-regular
+      font-size: $font-size-us
+      line-height: $font-line-height-us
+      margin-right: 1rem
+      span
+        font-weight: $font-weight-medium
+        font-size: $font-size-xxl
+        line-height: $font-line-height-lg
+
+  .btn
+    text-transform: inherit
+    display: block
+    width: 100%
+    max-width: 70%
+    margin: 0 auto
+    border: 0 none
+    font-size: $font-size-md
+    padding: .6rem 2.4rem
+    border-radius: $border-radius-pill
+    font-weight: $font-weight-semi-bold
+  .btn-signature
+    color: $color-neutral-deep
+    background-color: #fbba4c
+    &:hover
+      color: $color-neutral-lightest
+      background-color: $color-brand-primary-bright
+  .btn-app
+    border: 1px solid $color-neutral-lightest
+    background-color: transparent
+    &:hover
+      border: 1px solid $color-brand-primary-bright
+      background-color: $color-brand-primary-bright
+
+.buyflow
+  overflow: hidden
+  position: relative
+  color: $color-neutral-lightest
+  background: rgb(73,24,33)
+  background: linear-gradient(0deg, rgba(73,24,33,1) 0%, rgba(80,25,35,1) 100%)
+  h4
+    font-weight: $font-weight-regular
+    font-size: $font-size-xxl
+    line-height: $font-line-height-lg
+    display: flex
+    justify-content: center
+    align-items: baseline
+    gap: 1rem
+    img
+      max-width: 25.5rem
+      display: inline-block
+  h2
+    font-weight: $font-weight-medium
+    font-size: $font-size-xxl
+    line-height: $font-line-height-lg
+    margin-bottom: 3rem
+  p
+    font-size: $font-size-md
+    line-height: $font-line-height-sm
+    font-weight: $font-weight-regular
+    strong
+      font-weight: $font-weight-bold
+
+  .owl-carousel
+    cursor: grab
+    &:active
+      cursor: grabbing
+    .owl-stage-outer
+      overflow: visible
+    .item
+      position: relative
+      .content
+        text-align: left
+        position: absolute
+        top: 40px
+        left: 35px
+        right: 35px
+        h4
+          justify-content: start
+          min-height: 62px
+          font-size: 28px
+          line-height: 25px
+          font-weight: $font-weight-semi-bold
+          margin-top: 0
+          margin-bottom: .5rem
+          > img
+            width: auto
+            height: 4rem
+        p
+          font-size: $font-size-xs
+          line-height: $font-line-height-xxs
+          font-weight: $font-weight-regular
+          strong
+            font-weight: $font-weight-bold
+      figure
+        img
+          max-width: 42rem
+          border-radius: $border-radius-lg
+
+.sound-box-app-container
+  background: linear-gradient(0deg, rgba(99,27,40,1) 0%, rgba(73,24,33,1) 100%)
+
+.box-options
+  .box-content
+    position: relative
+    color: $color-neutral-lightest
+    .box-claro-txt
+      z-index: 9
+      padding: 180px 50px
+      border-top-left-radius: $border-radius-lg
+      border-bottom-left-radius: $border-radius-lg
+      background: url(../assets/images/bg/bg-claro-box.png) #2f090d no-repeat left bottom
+      background-size: 420px
+      h2
+        max-width: 34rem
+        font-size: $font-size-xxl
+        margin-bottom: 4rem
+      p
+        max-width: 34rem
+        font-size: $font-size-lg
+        font-weight: $font-weight-light
+        margin-bottom: 0
+        strong
+          font-weight: $font-weight-medium
+
+  .box-carrossel
+    position: absolute
+    top: 0
+    bottom: 0
+    .box-claro-carrossel
+      padding: 50px 0 50px 30px
+      height: 100%
+      background-color: #2f090d
+      display: flex
+      flex-direction: column
+      justify-content: center
+      .owl-carousel
+        .owl-stage
+          display: inline-flex
+          justify-content: stretch
+          align-items: stretch
+          background-color: #500709
+          border-radius: 20px
+          overflow: hidden
+        .owl-loading
+          opacity: 1
+      .box-item
+        width: 45rem
+        height: 100%
+        color: $color-neutral-lightest
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+        .box-content
+          background-color: #500709
+          .device-carrossel
+            height: 22rem
+            object-fit: contain
+            object-position: center
+          .logo-carrossel
+            height: 3rem
+          .logo-carrossel-app
+            height: 4rem
+          .content-carrossel
+            padding-top: 3rem
+            padding-inline: 3.5rem
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            text-align: center
+            gap: .75rem
+            h3
+              font-size: $font-size-lg
+              margin: 0
+            p
+              font-size: $font-size-md
+              line-height: $font-line-height-xs
+              font-weight: $font-weight-light
+              strong
+                font-weight: $font-weight-medium
+            .signatures-carrossel
+              margin-top: .5rem
+              height: 5rem
+              object-fit: contain
+              object-position: center
+
+        &.first-box, &.second-box
+          z-index: 3
+          &::before, &::after
+            pointer-events: none
+            content: ''
+            position: absolute
+            inset: 0
+            z-index: -1
+          &::after
+            background: rgba(211,39,45,1)
+          .box-content
+            $border: 5px
+        &.first-box
+          &::after
+            border-top-left-radius: 20px
+            border-bottom-left-radius: 20px
+          .box-content
+            margin: 1.5px 0.75px 1.5px 1.5px
+            padding: 4rem 3.5rem
+            border-top-left-radius: $border-radius-lg
+            border-bottom-left-radius: $border-radius-lg
+          .content-carrossel
+            padding-inline: 0
+        &.second-box
+          &::after
+            border-top-right-radius: 20px
+            border-bottom-right-radius: 20px
+            background: linear-gradient(325deg, rgba(211,39,45,1) 0%, rgba(199,64,71,1) 34%, rgba(254,194,196,1) 81%, rgba(211,39,45,1) 100%)
+          .box-content
+            height: 100%
+            margin: 1.5px 1.5px 1.5px 0.75px
+            padding: 4rem 0
+            border-top-right-radius: $border-radius-lg
+            border-bottom-right-radius: $border-radius-lg
+          .content-carrossel
+            padding-inline: 3.5rem
+
+.cardlist-content
+  position: relative
+  color: $color-neutral-lightest
+  background: rgb(73,24,33)
+  background: linear-gradient(180deg, rgba(73,24,33,1) 0%, rgba(99,27,40,1) 100%)
+  h4
+    &.title
+      font-weight: $font-weight-medium
+      font-size: $font-size-xl
+      line-height: $font-line-height-lg
+      letter-spacing: .15rem
+  figure
+    border-radius: $border-radius-lg
+    overflow: hidden
+    width: 100%
+    img
+      max-width: 100%
+
+.bf-channels
+  background: rgb(67,21,30)
+  background: linear-gradient(0deg, rgba(67,21,30,1) 0%, rgba(99,27,40,1) 100%)
+  .buyflow-channels
+    position: relative
+    z-index: 8
+    color: $color-neutral-lightest
+    background-color: #2f090d
+    border-radius: $border-radius-lg
+
+    .channels-flow
+      position: relative
+      z-index: 9
+      padding: $spacing-squish-xl
+      background-color: #200000
+      border-radius: $border-radius-lg
+      box-shadow: 0 1.3rem 5.7rem 0 rgba($color-neutral-deep, $opacity-medium)
+      h4
+        padding-right: 5%
+        font-size: $font-size-xxl
+      p
+        font-size: $font-size-md
+        font-weight: $font-weight-light
+      .channels-list
+        cursor: grab
+        &:active
+          cursor: grabbing
+        figure
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 8rem
+          margin: 0
+          position: relative
+          padding: $spacing-squish-md
+          &::after
+            position: absolute
+            left: .5rem
+            right: .5rem
+            top: .5rem
+            bottom: .5rem
+            content: ''
+            border-radius: $border-radius-md
+            background-color: #130000
+          img
+            z-index: 1
+            position: relative
+            width: calc( 100% - 1rem )
+            height: calc( 100% - 1rem )
+            object-fit: contain
+            object-position: center
+    .globoplay-signature
+      padding: 48px 32px
+      .glob-sign
+        z-index: 3
+        position: relative
+        display: grid
+        grid-template-columns: repeat(2, 2fr)
+        flex-direction: column
+        justify-content: center
+        justify-items: center
+        align-items: center
+        gap: 2rem
+        .buyflow-logo-globoplay
+          order: 4
+        .buyflow-logo-netflix
+          order: 2
+        .buyflow-logo-max
+          order: 1
+        .buyflow-logo-appletv
+          order: 3
+      .button-plus
+        z-index: 1
+        position: absolute
+        left: 0
+        top: 50%
+        color: $color-neutral-lightest
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url(../assets/images/bg/plus-icon.svg)
+        background-size: cover
+        background-color: #2f090d
+        width: 5rem
+        height: 5rem
+        transform: translate(-50%, -50%)
+      figure
+        width: 100%
+        text-align: center
+        position: relative
+        border: 1px solid $color-neutral-lightest
+        border-radius: calc($border-radius-lg * 1.5)
+        padding: 5rem
+        margin: 0
+        img
+          width: 100%
+          height: auto
+          max-width: 13.5rem
+          border-radius: $border-radius-md
+
+.price-plan
+  padding-top: 5rem
+  padding-bottom: 5rem
+  background: rgb(67,21,30)
+  background: linear-gradient(180deg, rgba(67,21,30,1) 0%, rgba(40,17,23,1) 100%)
+
+  .box-netflix
+    p
+      font-size: $font-size-md
+      line-height: $font-line-height-sm
+      color: $color-neutral-dark
+      margin: 0
+
+    .radio-wrapper
+      display: flex
+      flex-direction: column
+      gap: .5rem
+
+      .radio-inner
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-items: center
+        padding: 0 1rem
+        position: relative
+
+        label
+          font-size: $font-size-md
+          line-height: $font-line-height-xs
+          display: flex
+          flex-direction: row
+          flex: 1
+          gap: .75rem
+          align-items: center
+          text-wrap: nowrap
+          img
+            max-width: 100%
+            width: 7.5rem
+          span
+            font-size: $font-size-lg
+            line-height: $font-line-height-md
+            color: $color-brand-primary-bright
+
+        & input,
+        & input:focus,
+        & input:hover
+          all: unset
+          position: absolute
+          inset: 0
+
+        .radio-image
+          border: 1px solid $color-neutral-darkest
+          background-color: $color-neutral-lightest
+          margin-right: 2rem
+          box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 1)
+          width: 20px
+          height: 20px
+          border-radius: 100%
+          transition: all .3s
+
+        &:hover, &:focus-within
+          .radio-image
+            background-color: $color-brand-primary-medium
+
+        &:has(:checked)
+          .radio-image
+            background-color: $color-brand-primary-medium
+
+  .product-plan
+    z-index: 2
+    position: relative
+    border-radius: $border-radius-lg
+    color: $color-neutral-dark
+    background-color: $color-neutral-lightest
+    width: 100%
+    figure
+      margin-bottom: 1.5rem
+      &.app-claro
+        width: 100%
+        img
+          display: block
+          margin-inline: auto
+          height: 3.25rem
+          max-width: 100%
+      &.sign-globo
+        width: 100%
+        img
+          display: block
+          margin-inline: auto
+          width: 100%
+          max-width: 28rem
+          height: auto
+    .discount-plan
+      background-color: #3c1c23
+      padding-block: 1rem
+      margin-left: -15px
+      margin-right: -15px
+      p
+        color: $color-neutral-lightest
+        font-size: $font-size-sm
+        line-height: $font-line-height-xxs
+    .value-plan
+      padding-top: 1.5rem
+      padding-bottom: 0rem
+      margin-left: -15px
+      margin-right: -15px
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: center
+      span
+        align-self: flex-end
+        margin-bottom: 1rem
+      h5
+        font-size: $font-size-xxl
+        font-weight: $font-weight-medium
+        min-height: 6rem
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        margin-bottom: 0
+        gap: 0 5px
+        strong
+          font-size: calc($font-size-ul * 2)
+          line-height: calc($font-line-height-xl * 2)
+          margin-bottom: .5rem
+
+    .btn
+      border: 1px solid
+      font-size: $font-size-sm
+      padding: $spacing-squish-xs
+      border-radius: $border-radius-pill
+      &.btn-plan
+        text-wrap: nowrap
+        font-size: $font-size-md
+        padding: .8rem 2.4rem
+      &.btn-primary
+        font-weight: $font-weight-semi-bold
+        border-color: $color-brand-primary-medium
+        background-color: $color-brand-primary-medium
+        &:hover
+          border-color: $color-brand-primary-bright
+          background-color: $color-brand-primary-bright
+      &.btn-secondary
+        font-weight: $font-weight-medium
+        border-color: $color-neutral-dark
+        color: $color-neutral-dark
+        background-color: $color-neutral-lightest
+        &:hover
+          color: $color-neutral-lightest
+          border-color: $color-brand-primary-bright
+          background-color: $color-brand-primary-bright
+
+    #clarotv-aria-soundbox, #clarotv-aria-box, #app-netflix-box, #app-netflix-soundbox
+      .accordion-item
+        border: 0 none
+        p
+          color: $color-neutral-dark
+          font-size: $font-size-xs
+          line-height: $font-line-height-sm
+          font-weight: $font-weight-regular
+          margin-bottom: 0
+      .accordion-button
+        font-weight: $font-weight-regular
+        text-wrap: nowrap
+        text-transform: inherit
+        color: $color-neutral-dark
+        font-size: $font-size-sm
+        padding: $spacing-squish-sm
+        outline: none
+        border: 0 none
+        gap: 5px
+        &:not(.collapsed), &:focus, &:hover
+          background-color: transparent
+          outline: none
+          box-shadow: none
+        &::after
+          width: 1.3rem
+          height: 1.3rem
+          background-position: center
+          background-repeat: no-repeat
+          background-size: cover
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231D1D1D'%3e%3cpath fill-rule='evenodd' d='M.74,1.41c.32-.33.85-.33,1.18,0,0,0,0,0,0,0l6.08,8.41L14.08,1.41c.33-.33.85-.33,1.18,0s.33.85,0,1.18l-6.67,9c-.32.33-.85.33-1.18,0,0,0,0,0,0,0L.74,2.59c-.33-.32-.33-.85,0-1.18,0,0,0,0,0,0Z'/%3e%3c/svg%3e")
+          margin: 0
+  .info-label
+    font-size: $font-size-xxs
+    line-height: $font-line-height-xxxs
+    color: $color-neutral-lightest
+
+.faq-session
+  background: #281117
+  .title
+    h5
+      color: $color-neutral-lightest
+      font-size: $font-size-xxl
+      line-height: $font-line-height-lg
+      font-weight: $font-weight-regular
+  .faq-questions
+    .accordion-button
+      text-transform: inherit
+      background-color: transparent
+      color: $color-neutral-lightest
+      font-weight: $font-weight-regular
+      font-size: $font-size-md
+      padding: $spacing-squish-xl
+      outline: none
+      border: 0 none
+      border-bottom: $border-width-medium $border-style-default $color-brand-primary-darkest
+      gap: 2rem
+      strong
+        color: $color-brand-primary-bright
+        font-weight: $font-weight-bold
+      &:not(.collapsed), &:focus, &:hover
+        background-color: transparent
+        outline: none
+        box-shadow: none
+      &::after
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF3B30'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")
+    .accordion-body
+      padding: $spacing-squish-xl
+      ul
+        margin-bottom: 2rem
+        margin-left: 1rem
+        li
+          list-style-type: disc
+          margin-bottom: .5rem
+          &::marker
+            color: $color-brand-primary-medium
+      p, li
+        color: $color-neutral-lightest
+        font-size: $font-size-sm
+        line-height: $font-line-height-sm
+        font-weight: $font-weight-light
+        a
+          color: $color-brand-primary-bright
+          font-weight: $font-weight-medium
+          transition: all .3s
+          &:hover
+            color: $color-brand-primary-medium
+
+        &:last-child
+          margin-bottom: 0
+        strong
+          font-weight: $font-weight-bold
+
+.legal-term
+  position: relative
+  background: #281117
+  border-bottom: 1px solid #cd262d
+  &::after
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    display: block
+    border-bottom: 1px solid #d26868
+  p, a
+    color: $color-neutral-lightest
+    font-size: $font-size-xxxs
+    line-height: $font-line-height-xxxs
+    a
+      font-weight: $font-weight-semi-bold
+      text-decoration: underline
+
+footer
+  background-color: #281117
+  padding-top: 4rem
+  padding-bottom: 4rem
+  .copyright-text
+    p
+      color: $color-neutral-lightest
+      font-weight: $font-weight-light
+      font-size: $font-size-xxs
+      margin: 0
+    nav ul
+      display: flex
+      flex-direction: row
+      justify-content: center
+      gap: 2rem
+      margin-bottom: 2rem
+      a
+        text-transform: $text-uppercase
+        text-decoration: none
+        color: $color-neutral-light
+        font-size: $font-size-xxxs
+        font-weight: $font-weight-semi-bold
+        transition: .3s all
+      &:hover
+        color: $color-neutral-lightest
+  figure
+    max-width: 12rem
+    img
+      width: 100%
+
+@keyframes flickerAnimation
+  0%
+    opacity: $opacity-opaque
+  50%
+    opacity: $opacity-transparent
+  100%
+    opacity: $opacity-opaque
+
+@keyframes shake
+  10%, 90%
+    @include transform(translate3d(-1rem, -2.5rem, 0))
+
+  20%, 80%
+    @include transform(translate3d(2rem, -2.5rem, 0))
+
+  30%, 50%, 70%
+    @include transform(translate3d(-2rem, -2.5rem, 0))
+
+  40%, 60%
+    @include transform(translate3d(2.5rem, -2.5rem, 0))
+
+@keyframes fade
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fadeInOut
+  0%, 100%
+    opacity: 0
+  5%, 95%
+    opacity: 1
+
+@keyframes slideRight
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(100vw)
+
+/** Adaptações **/
+
+@media screen and (max-width: $screen-size-ul)
+
+@media screen and (max-width: $screen-size-xxxl)
+
+@media screen and (max-width: $screen-size-xxl)
+  .banner-content
+    background-image: none
+    background: linear-gradient(0deg, rgba(73,24,33,1) 0%, rgba(108,32,42,1) 100%)
+    .banner-slideshow
+      position: relative
+      .item
+        margin-left: 0
+        img
+          min-height: auto
+          max-height: 70rem
+          object-fit: cover
+          object-position: bottom center
+
+  .box-options
+    .box-content
+      .box-claro-txt
+        padding-inline: 3rem
+
+  .bf-channels
+    .buyflow-channels
+      .globoplay-signature
+        .button-plus
+          left: 50%
+          top: 0
+          width: 3.5rem
+          height: 3.5rem
+        figure
+          width: 100%
+          padding: 3rem 2rem 2rem
+          margin-top: 3rem
+          margin-bottom: 3rem
+          border-radius: $border-radius-lg
+          .glob-sign
+            grid-template-columns: repeat(4, 1fr)
+            gap: 1rem
+            .buyflow-logo-globoplay
+              order: 1
+            .buyflow-logo-netflix
+              order: 2
+            .buyflow-logo-max
+              order: 3
+            .buyflow-logo-appletv
+              order: 4
+            img
+              border-radius: $border-radius-none
+      .channels-flow
+        text-align: center
+
+@media screen and (max-width: $screen-size-xl)
+  body
+    background-position: center 150px
+  .buyflow
+    overflow: hidden
+    h4
+      font-weight: $font-weight-bold
+      font-size: $font-size-xl
+      line-height: $font-line-height-md
+      display: inline-block
+      img
+        max-width: 20rem
+        margin-bottom: 15px
+        margin-inline: 5px
+
+    p
+      font-size: $font-size-md
+      line-height: $font-line-height-xs
+
+  .cardlist-content
+    h4
+      &.title
+        font-size: $font-size-lg
+        line-height: $font-line-height-sm
+        letter-spacing: 0
+
+  .price-plan
+    .box-netflix
+      .accordion-body
+        display: flex
+        flex-direction: column
+        align-items: center
+        .radio-wrapper
+          width: fit-content
+          .radio-inner
+            padding: 0
+    .owl-carousel
+      .owl-stage
+        .owl-item
+          display: flex
+          flex-direction: column
+          align-items: center
+    .box-netflix
+      .radio-wrapper
+        .radio-inner
+          padding: 0 1rem
+          label
+            font-size: $font-size-sm
+            line-height: $font-line-height-sm
+            img
+              width: 6.5rem
+
+@media screen and (max-width: $screen-size-lg)
+  .price-plan
+    .box-netflix
+      .accordion-body
+        .radio-wrapper
+          margin-left: -1rem
+          .radio-inner
+            padding: 0
+    .product-plan
+      .btn
+        &.btn-primary, &.btn-secondary
+          width: 100%
+          font-size: $font-size-sm
+      .discount-plan
+        margin-left: -30px
+        margin-right: -30px
+
+  .box-options
+    .box-carrossel
+      .box-claro-carrossel
+        padding: 50px 0
+        .box-item
+          width: 40rem
+          .box-content
+            height: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+
+  .bf-channels
+    .buyflow-channels
+      .channels-flow
+        .channels-list
+          figure
+            padding: $spacing-squish-xxxs
+
+@media screen and (max-width: $screen-size-md)
+  header
+    .btn-whatsapp
+      width: 42px
+      padding: 1rem
+      span
+        display: none
+    .btn-whatsapp, .btn-header
+      height: 42px
+      
+  .banner-content
+    text-align: center
+    .banner-slideshow
+      .item
+        img
+          max-height: 55rem
+  .price-plan
+    padding-top: 2rem
+    .box-netflix
+      .accordion-body
+        .radio-wrapper
+          margin-left: 0
+    .owl-carousel
+      .owl-stage-outer
+        padding-top: 3rem
+      .owl-stage
+        display: flex
+        flex-wrap: nowrap
+        .owl-item
+          position: relative
+          transition: transform 0.3s, z-index 0.3s
+          &.active
+            opacity: 1
+          &.center
+            z-index: 10
+            transform: none
+          .product-plan
+            box-shadow: 0 0px 30px rgba(0, 0, 0, .85)
+            border-radius: 20px
+            .btn
+              &.btn-primary, &.btn-secondary
+                width: 100%
+                font-size: $font-size-md
+
+            #app-clarotv, #app-clarotvgloboplay, #app-netflix-box, #app-netflix-soundbox
+              .accordion-item
+                margin-inline: -1.5rem
+              .accordion-button
+                font-size: $font-size-xs
+                padding: 8px 0 0
+
+  .box-options
+    .box-carrossel
+      position: relative
+      background: url(../assets/images/bg/bg-claro-box.png) #2f090d no-repeat left bottom
+      background-size: calc(100% - 35vw)
+      .box-claro-carrossel
+        background-color: transparent
+    .box-content
+      max-width: 100% !important
+      .box-claro-txt
+        padding: 50px 50px 0
+        background-image: none
+        border-bottom-left-radius: 0
+        border-top-right-radius: $border-radius-lg
+        h2, p
+          max-width: inherit
+        h2
+          font-size: $font-size-xl
+        p
+          font-size: $font-size-sm
+
+@media screen and (max-width: $screen-size-sm)
+  .buyflow
+    .owl-carousel
+      .owl-stage-outer
+        overflow: visible
+
+      .item
+        figure
+          img
+            width: 100%
+            max-width: 40rem
+
+@media screen and (max-width: $screen-size-xs)
+  .cardlist-content
+    h4
+      &.title
+        font-size: $font-size-xxs
+        line-height: $font-line-height-xxs
+  .price-plan
+    .product-plan
+      .discount-plan
+        p
+          font-size: $font-size-xs
+
+    .box-netflix
+      .radio-wrapper
+        .radio-inner
+          label
+            font-size: $font-size-xs
+            gap: .5rem
+
+@media screen and (max-width: $screen-size-xxs)
+  header
+    figure
+      max-width: 16rem
+    .btn-header
+      font-weight: $font-weight-medium
+      font-size: $font-size-xxs
+      padding: .8rem 2.4rem
+  .banner-content
+    min-height: calc(100vh - 6rem)
+    text-align: center
+    color: $color-neutral-lightest
+    justify-content: space-between !important
+    .app-claro, .price-claro
+      justify-content: center
+    h1
+      font-size: $font-size-lg
+      line-height: $font-line-height-sm
+    p
+      font-size: $font-size-xs
+      line-height: $font-line-height-xxxs
+      margin: 0
+    .btn-channels
+      img
+        max-width: 100%
+        width: 100%
+
+  .buyflow
+    h4
+      font-size: $font-size-lg
+      line-height: $font-line-height-sm
+      margin-bottom: 2rem
+    p
+      font-size: $font-size-sm
+      line-height: $font-line-height-xs
+    .owl-carousel
+      .item
+        figure
+          max-width: calc(100vw - 10%)
+
+  .box-options
+    .box-carrossel
+      .box-claro-carrossel
+        .box-item
+          max-width: 36.5rem
+          &.first-box
+            .box-content
+              padding: 4rem 3rem
+        .box-item
+          .box-content
+            .content-carrossel
+              h3
+                font-size: $font-size-md
+                line-height: $font-line-height-sm
+              p
+                font-size: $font-size-xs
+                line-height: $font-line-height-xxs
+
+  .price-box-claro
+    .price-claro
+      font-weight: $font-weight-black
+      h2
+        margin: 0
+        &.plan-value
+          font-size: $font-size-xl
+          font-weight: $font-weight-medium
+          strong
+            font-size: calc($font-size-ul * 1.75)
+            line-height: calc($font-line-height-xl * 1.75)
+      .font-sublime
+        max-width: 10rem
+        font-weight: $font-weight-regular
+        font-size: $font-size-xxxs
+        line-height: $font-line-height-xxxs
+
+  .bf-channels
+    .buyflow-channels
+      .channels-flow
+        text-align: center
+        padding: $spacing-squish-sm $spacing-squish-md
+        border-radius: $border-radius-lg
+        h4
+          font-size: $font-size-lg
+          padding-right: 0
+        p
+          font-size: $font-size-xs
+          line-height: $font-line-height-xs
+        .channels-list
+          figure
+            padding: $spacing-squish-xs
+      .globoplay-signature
+        padding: 3.2rem 1.6rem
+        border-radius: $border-radius-none $border-radius-none $border-radius-lg $border-radius-lg
+        .button-plus
+          left: 50%
+          top: 0
+        figure
+          padding: 2.1rem 2rem 1.5rem
+          margin-top: 3rem
+          margin-bottom: 3rem
+          .glob-sign
+            img
+              border-radius: $border-radius-none
+
+  .price-plan
+    .box-netflix
+      .radio-wrapper
+        .radio-inner
+          padding: 0
+          .radio-image
+            margin-right: 1rem
+    .product-plan
+      .value-plan
+        h5
+          font-size: $font-size-xxl
+          gap: 0
+          strong
+            font-size: calc($font-size-ul * 1.6)
+            line-height: calc($font-line-height-xl * 1.6)
+    .owl-carousel
+      .owl-stage
+        display: flex
+        flex-wrap: nowrap
+        .owl-item
+          position: relative
+          transition: transform 0.3s, z-index 0.3s
+          .product-plan
+            min-width: 100%
+            box-shadow: 0 0px 30px rgba(0, 0, 0, .85)
+            border-radius: 20px
+
+  .faq-session
+    .title
+      h5
+        font-size: $font-size-lg
+        line-height: $font-line-height-md
+        strong
+          display: block
+    .faq-questions
+      .accordion-button
+        font-size: $font-size-xs
+        line-height: $font-line-height-xs
+        padding: $spacing-squish-md
+      .accordion-body
+        p, li, a
+          font-size: $font-size-xs
+          line-height: $font-line-height-sm
+
+  footer
+    .copyright-text
+      nav
+        ul
+          flex-direction: column
+          gap: .5rem
+
+@media screen and (max-width: $screen-size-xxxs)

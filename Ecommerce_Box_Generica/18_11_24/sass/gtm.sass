@@ -1,0 +1,91 @@
+@import 'token'
+
+#onetrust-consent-sdk
+    display: none !important
+    font-family: $font-family-amx !important
+    z-index: 99
+    position: fixed
+    #onetrust-banner-sdk
+        background-color: rgba($color-neutral-darkest, $opacity-semi-opaque ) !important
+        .ot-sdk-row
+            display: flex
+            align-items: center
+            justify-content: space-around
+            padding: $spacing-squish-xs
+        #onetrust-button-group-parent
+            text-align: right
+        &:not(.ot-iab-2)
+            #onetrust-button-group-parent
+                margin: 0 !important
+                padding: 0 !important
+        #onetrust-policy
+            padding: 0 !important
+            margin: 0 !important
+        #onetrust-policy-text
+            font-size: $font-size-xxs
+            color: $color-neutral-lightest
+            a[href]
+                font-size: $font-size-xxs
+                color: $color-neutral-lightest
+        #onetrust-button-group
+            display: flex
+            flex-direction: row
+            justify-content: flex-end
+            button
+                font-size: $font-size-xxs
+                text-transform: uppercase
+                font-family: $font-family-amx !important
+                padding: 1.2rem 2.4rem .8rem
+                border-radius: $border-radius-pill
+                transition: .3s all
+                @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm)
+                    padding: 1.2rem 2.4rem
+                &:hover
+                    opacity: $opacity-opaque
+            #onetrust-pc-btn-handler
+                background-color: transparent !important
+                color: $color-neutral-lightest
+                &:hover
+                    text-decoration: none
+            #onetrust-accept-btn-handler
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-right: 0
+                background-color: $color-brand-primary-medium
+                &:hover
+                    background-color: $color-brand-primary-bright
+
+@media(max-width: $screen-size-xxs)
+    #onetrust-consent-sdk
+        #onetrust-banner-sdk
+            .ot-sdk-container
+                padding: 0 .8rem
+            .ot-sdk-row
+                flex-direction: column
+                padding: 1.6rem 0
+            #onetrust-policy-text
+                font-size: $font-size-xxxs
+                a[href]
+                    font-size: $font-size-xxxs
+            #onetrust-button-group
+                margin-top: 1rem
+                justify-content: space-around
+                gap: 1rem
+                button
+                    padding: 0
+                    margin: 0 !important
+                    &#onetrust-accept-btn-handler
+                        padding: 1.2rem 1.6rem .8rem
+
+@media(min-width: $screen-size-md)
+    #onetrust-banner-sdk
+        #onetrust-button-group
+            margin-right: 0 !important
+            button
+                margin-top: 1rem
+                margin-bottom: 1rem
+
+@media(min-width: $screen-size-xs)
+    #onetrust-banner-sdk .ot-sdk-eight.ot-sdk-columns, #onetrust-banner-sdk .ot-sdk-three.ot-sdk-columns
+        width: 50% !important
